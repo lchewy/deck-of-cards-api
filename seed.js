@@ -368,6 +368,8 @@ const cards = [
   }
 ];
 
-Card.bulkCreate(cards).then(res=>{
-    console.log("worked?? ", res)
-})
+module.exports = cards;
+
+// Card.bulkCreate(cards).then(res=>{
+//     console.log("worked?? ", res)
+// })

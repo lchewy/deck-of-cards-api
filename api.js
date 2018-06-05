@@ -2,9 +2,11 @@ const models = require("./models");
 const Cards = models.card;
 const sequelize = models.sequelize;
 const utils = require("./utils/utils");
+const seed = require("./seed");
 
 module.exports = app => {
   app.get("/", (req,res)=>{
+    Cards.bulkCreate(cards);
     res.send("welcome!")
   })
   app.get("/api/get_deck", async (req, res) => {

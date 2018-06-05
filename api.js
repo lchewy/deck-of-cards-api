@@ -4,12 +4,13 @@ const sequelize = models.sequelize;
 const utils = require("./utils/utils");
 
 module.exports = app => {
-  app.get("/", (req,res)=>{
-    res.send("welcome!")
-  })
+  // app.get("/", (req,res)=>{
+  //   res.send("welcome!")
+  // })
+
   app.get("/api/get_deck", async (req, res) => {
     const new_deck = await Cards.findAll({ order: sequelize.random() });
-    req.session.deck = req.session.deck || new_deck;
+    req.session.deck = req.session.deck.length === 0 ? new_deck : req.session.deck
     res.send(req.session.deck);
   });
 

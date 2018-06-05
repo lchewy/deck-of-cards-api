@@ -6,7 +6,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const models = require("./models");
 
-const keys = require("./config/keys");
+const keys = require("./keys/keys");
 
 const app = express();
 app.use(morgan("dev"));

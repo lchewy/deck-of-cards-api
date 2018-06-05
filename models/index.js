@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const keys = require("../config/keys");
-let sequelize;
+let sequelize = null;
 
 if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, {

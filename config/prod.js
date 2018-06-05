@@ -1,6 +1,6 @@
 module.exports = {
-  sequelizeURI: process.env.SEQUELIZE_URI,
-  sequelizeUserName: process.env.SEQUELIZE_USER_NAME,
-  sequelizePassword: process.env.SEQUELIZE_PASSWORD,
+  sequelizeURI: null,
+  sequelizeUserName: null,
+  sequelizePassword: null,
   sessionSecret: process.env.SESSION_SECRET
 };

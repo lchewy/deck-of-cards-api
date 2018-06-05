@@ -1,20 +1,29 @@
 const Sequelize = require("sequelize");
 const keys = require("../config/keys");
 
-const sequelize = new Sequelize(
-  keys.sequelizeURI,
-  keys.sequelizeUserName,
-  keys.sequelizePassword,
-  {
+if (process.env.DATABASE_URL) {
+  const sequelize = new Sequelize(process.env.DATABASE_URL, {
     host: "localhost",
     dialect: "postgres",
     operatorsAliases: false,
-    logging: false,
-  }
-);
+    logging: false
+  });
+} else {
+  const sequelize = new Sequelize(
+    keys.sequelizeURI,
+    keys.sequelizeUserName,
+    keys.sequelizePassword,
+    {
+      host: "localhost",
+      dialect: "postgres",
+      operatorsAliases: false,
+      logging: false
+    }
+  );
+}
 
 const models = {
-  card: sequelize.import("./Card"),
+  card: sequelize.import("./Card")
 };
 
 Object.keys(models).forEach(modelName => {

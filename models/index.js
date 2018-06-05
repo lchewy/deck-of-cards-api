@@ -1,15 +1,16 @@
 const Sequelize = require("sequelize");
 const keys = require("../config/keys");
+let sequelize;
 
 if (process.env.DATABASE_URL) {
-  const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
     host: "localhost",
     dialect: "postgres",
     operatorsAliases: false,
     logging: false
   });
 } else {
-  const sequelize = new Sequelize(
+  sequelize = new Sequelize(
     keys.sequelizeURI,
     keys.sequelizeUserName,
     keys.sequelizePassword,

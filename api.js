@@ -10,7 +10,7 @@ module.exports = app => {
 
   app.get("/api/get_deck", async (req, res) => {
     const new_deck = await Cards.findAll({ order: sequelize.random() });
-    req.session.deck = req.session.deck.length === 0 ? new_deck : req.session.deck
+    req.session.deck = req.session.deck || new_deck 
     res.send(req.session.deck);
   });
 

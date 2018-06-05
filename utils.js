@@ -12,11 +12,8 @@ exports.getBySuit = (array, suits) => {
   const removeSuit = _.filter(array, ({ suit }) => {
     return suit === suits;
   });
-  const deck = _.filter(array, ({ suit }) => {
-    return suit !== suits;
-  });
 
-  return [...removeSuit, ...deck];
+  return removeSuit;
 };
 
 const sortBySuit = (array, deck) => {

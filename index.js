@@ -25,7 +25,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     proxy: true,
-    store: myStore
+    store: myStore,
   })
 );
 

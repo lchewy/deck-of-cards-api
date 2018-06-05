@@ -1,7 +1,7 @@
 const models = require("./models");
 const Cards = models.card;
 const sequelize = models.sequelize;
-const utils = require("./utils");
+const utils = require("./utils/utils");
 
 module.exports = app => {
   app.get("/api/get_deck", async (req, res) => {
@@ -37,7 +37,7 @@ module.exports = app => {
     res.send(hand);
   });
 
-  app.get("/api/order_deck", (req, res) => {
+  app.get("/api/sort_deck", (req, res) => {
     const order_deck = utils.sortBySuits(req.session.deck);
     req.session.deck = order_deck;
     res.send(req.session.deck);

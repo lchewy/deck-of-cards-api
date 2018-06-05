@@ -25,7 +25,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     proxy: true,
-    store: myStore,
+    store: myStore
   })
 );
 
@@ -35,8 +35,12 @@ require("./api")(app);
 
 const PORT = process.env.PORT || 5000;
 
-models.sequelize.sync().then(() => {
-  app.listen(PORT, async () => {
-    console.log("listening on port ", PORT);
+if (!module.parent) {
+  models.sequelize.sync().then(() => {
+    app.listen(PORT, () => {
+      console.log("listening on port ", PORT);
+    });
   });
-});
+}
+
+module.exports = app;

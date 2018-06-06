@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const cors = require("cors");
 
 const models = require("./models");
 
@@ -11,6 +12,7 @@ const keys = require("./keys/keys");
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json(""));
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 

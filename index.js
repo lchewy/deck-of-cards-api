@@ -13,7 +13,9 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json(""));
 app.use(cors({
-  credentials: true
+  origin: ["http://localhost:3000", /([A-Za-z0-9])\w+/],
+  credentials: true,
+  allowedHeaders: true
 }))
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

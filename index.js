@@ -12,12 +12,14 @@ const keys = require("./keys/keys");
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json(""));
+
 app.use(cors({
-  origin: ["http://localhost:3000", /([A-Za-z0-9])\w+/],
+  origin: ["http://localhost:3000/"],
   credentials: true,
   allowedHeaders: true,
-  methods:['GET']
+  methods:['GET', 'POST']
 }))
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 

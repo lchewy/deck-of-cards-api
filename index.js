@@ -33,6 +33,8 @@ myStore.sync();
 
 require("./api")(app);
 
+app.use(express.static("client"));
+
 const path = require("path");
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "index.html"));

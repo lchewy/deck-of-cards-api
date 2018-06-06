@@ -1,0 +1,27 @@
+body{
+    font-family: 'Courier New', Courier, monospace;  
+    padding: 5px;
+}
+
+.ex_container{
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    background-color: #dfdfdf;
+    padding: 10px;
+    display: inline-block;
+}
+
+.curly_bracket{
+    padding-left: 20px;
+}
+.data{
+    padding-left: 40px;
+}
+
+.number{
+    color: #0419C4;
+}
+
+.value{
+    color: #34721E;
+}

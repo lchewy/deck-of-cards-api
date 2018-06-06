@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
 
-    <title>React App</title>
-  </head>
-  <body>
-   <div>Helloooo world</div>
-  </body>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
+    <title>Deck of Cards API</title>
+</head>
+
+<body>
+    <h1 align="center">Simple Deck of Cards API</h1>
+    <hr>
+    <h4>Start with a Deck</h4>
+    <p>The following API will either get you a fresh deck or your previous deck
+        <p>Use the above URL with the following endpoint .../api/get_deck</p>
+    </p>
+    <p>Your current deck will be held in a session for 24 hrs</p>
+    <h5>example endpoint</h5>
+    <div class="ex_container">
+        <div class="ex_item">[</div>
+        <div class="ex_item curly_bracket">{</div>
+        <div class="ex_item data">"id": <span class="number">36</span>,</div>
+        <div class="ex_item data">"img": <span class="value">"https://upload.wikimedia.org/wikipedia/commons/9/98/Playing_card_heart_10.svg",</span></div>
+        <div class="ex_item data">"val": <span class="value">"10"</span>,</div>
+        <div class="ex_item data">"suit": <span class="value">"HEARTS"</span>,</div>
+        <div class="ex_item data">"code": <span class="value">"10H"</span>,</div>
+        <div class="ex_item data">"createdAt": <span class="value">"2018-06-04T23:33:10.304Z"</span>,</div>
+        <div class="ex_item data">"updatedAt": <span class="value">"2018-06-04T23:33:10.304Z"</span></div>
+        <div class="ex_item curly_bracket">},</div>
+        <div class="ex_item curly_bracket">{</div>
+        <div class="ex_item data">"id": <span class="number">38</span>,</div>
+        <div class="ex_item data">"img": <span class="value">"https://upload.wikimedia.org/wikipedia/commons/7/72/Playing_card_heart_Q.svg"</span>,</div>
+        <div class="ex_item data">"val": <span class="value">"QUEEN"</span>,</div>
+        <div class="ex_item data">"suit": <span class="value">"HEARTS"</span>,</div>
+        <div class="ex_item data">"code": <span class="value">"QH"</span>,</div>
+        <div class="ex_item data">"createdAt": <span class="value">"2018-06-04T23:33:10.304Z"</span>,</div>
+        <div class="ex_item data">"updatedAt": <span class="value">"2018-06-04T23:33:10.304Z"</span></div>
+        <div class="ex_item curly_bracket">},</div>
+        <div class="ex_item data">...</div>
+        <div class="ex_item">]</div>
+    </div>
+    <hr>
+    <h4>Shuffle Your Deck</h4>
+    <p>The following endpoint uses the Fisher Yates shuffle algorithm to shuffle or reshuffle your deck</p>
+    <p>.../api/shuffle_deck</p>
+    <hr>
+    <h4>Get Specific Suits</h4>
+    <p>Get all cards from a specific suit from your current hand with .../api/{SUIT}</p>
+    <p>{SUIT} should be either diamonds, clubs, hearts or spades.</p>
+    <hr>
+    <h4>Sort Your Deck</h4>
+    <p>No matter how randomize your deck becomes you can sort your current with the following endpoint</p>
+    <p>.../api/sort_deck</p>
+    <p>Deck will come back as Diamonds [A-K], Clubs [A-K], Hearts [A-K] and Spades [A-K]</p>
+    <hr>
+    <h3>...More to come</h3>
+</body>
+
 </html>

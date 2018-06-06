@@ -15,7 +15,8 @@ app.use(express.json(""));
 app.use(cors({
   origin: ["http://localhost:3000", /([A-Za-z0-9])\w+/],
   credentials: true,
-  allowedHeaders: true
+  allowedHeaders: true,
+  methods:['GET']
 }))
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
